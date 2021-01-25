@@ -9,11 +9,32 @@ select,
 textarea {
 	color: #404040;
 	font-family: "Comfortaa", Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
+	line-height: 1;
+	font-size: smaller;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+}
+
+.criminalList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-basis: 20%;
+}
+
+.criminalContainer {
+	padding: 3px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	border: solid black;
+	font-weight: bolder;
+	margin: 10px;
+	width: 20%;
+}
+.criminalName {
+	font-size:large;
 }

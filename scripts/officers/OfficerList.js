@@ -3,7 +3,7 @@ import {Officer} from './Officer.js'
 
 const officerContainer = document.querySelector(".officerContainer")
 
-export const officerList = () => {
+export const OfficerList = () => {
     getOfficers()
         .then(() => {
             const officerArray = useOfficers()
