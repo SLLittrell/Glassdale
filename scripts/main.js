@@ -1,9 +1,14 @@
 console.log("Welcome to the main module")
 // import {getOfficers, useOfficers} from './officers/OfficerProvider.js'
 // import {getCriminals} from './criminals/CriminalDataProvider.js'
-import {officerList} from "./officers/OfficerList.js";
+import {OfficerList} from "./officers/OfficerList.js";
+import { CriminalList } from "./criminals/CriminalList.js";
 
 // console.log(getOfficers())
-// console.log(getCriminals())
 
-officerList()
+
+//List of officers
+OfficerList()
+
+//List of criminals
+CriminalList()
