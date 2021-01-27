@@ -5,7 +5,7 @@ console.log("Welcome to the main module")
 import { CriminalList } from "./criminals/CriminalList.js";
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 import {OfficerSelect} from './officers/OfficerSelect.js'
-import {}
+import {NoteForm} from './notes/NoteForm.js'
 
 // console.log(getOfficers())
 
@@ -20,3 +20,6 @@ ConvictionSelect()
 
 //select dropdown call
 OfficerSelect()
+
+//Note form html
+NoteForm()
