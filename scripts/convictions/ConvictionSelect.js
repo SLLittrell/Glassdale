@@ -28,6 +28,15 @@ eventHub.addEventListener("change", event => {
     }
 })
 
+export const ConvictionSelect = () => {
+    // Trigger fetching the API data and loading it into application state
+    getConvictions()
+    .then( () => {
+      // Get all convictions from application state
+      const convictions = useConvictions()
+      render(convictions)
+    })
+}
 
 
 const render = convictionsCollection => {
@@ -41,21 +50,12 @@ const render = convictionsCollection => {
         <option value="0">Please select a crime...</option>
          ${
             convictionsCollection.map(convictionObject => 
-            `<option value="${convictionObject.id}>${convictionObject.name}</option>`) .join("")
+            `<option value="${convictionObject.id}">${convictionObject.name}</option>`) .join("")
             }
         </select>
     `
 }
 
-export const ConvictionSelect = () => {
-    // Trigger fetching the API data and loading it into application state
-    getConvictions()
-    .then( () => {
-      // Get all convictions from application state
-      const convictions = useConvictions()
-      render(convictions)
-    })
-}
 
 
 
