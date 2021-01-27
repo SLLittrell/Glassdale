@@ -1,21 +1,26 @@
 import { getOfficers, useOfficers } from "./OfficerDataProvider.js"
+
+
 const contentTarget = document.querySelector(".filters__officer")
-// eventHub.addEventListener("change", changeEvent => {
-//     if (changeEvent.target.id === "officerSelect") {
-//         // Get the name of the selected officer
-//         const selectedOfficer = changeEvent.target.value
+const eventHub = document.querySelector(".container")
 
-//         // Define a custom event
-//         const customEvent = new CustomEvent("officerSelected", {
-//             detail: {
-//                 officer: selectedOfficer
-//             }
-//         })
 
-//         // Dispatch event to event hub
-//         eventHub.dispatchEvent(customEvent)
-//     }
-// })
+eventHub.addEventListener("change", changeEvent => {
+    if (changeEvent.target.id === "officerSelect") {
+        // Get the name of the selected officer
+        const selectedOfficer = changeEvent.target.value
+
+        // Define a custom event
+        const customEvent = new CustomEvent("officerSelected", {
+            detail: {
+                officer: selectedOfficer
+            }
+        })
+
+        // Dispatch event to event hub
+        eventHub.dispatchEvent(customEvent)
+    }
+})
 
 export const OfficerSelect = () => {
     // Trigger fetching the API data and loading it into application state
