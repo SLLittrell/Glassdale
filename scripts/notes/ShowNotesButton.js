@@ -5,6 +5,9 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showNotes") {
+        clickEvent.preventDefault()
+        // console.log("show notes button clicked")
+        // debugger
         const customEvent = new CustomEvent("showNotesClicked")
         eventHub.dispatchEvent(customEvent)
     }

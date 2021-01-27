@@ -1,3 +1,4 @@
+import {saveNote} from './NoteDataProvider.js'
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -7,9 +8,9 @@ const render = () => {
         Notes
         <form>
             <fieldset>
-                <input type="text" id="note-text" value="Note">
+                <input type="text" id="note-text">
                 <input type="date" id="note-date">
-                <input type="text" id="note-suspect" value="Suspect Name">
+                <input type="text" id="note-suspect">
             </fieldset>
             <button id="saveNote">Save Note</button>
         </form>
@@ -22,18 +23,20 @@ export const NoteForm = () => {
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
-
+        clickEvent.preventDefault()
+        // console.log ("click happened")
+    // debugger
         // Make a new object representation of a note
-        const newNote = new CustomEvent ( "noteSaved", {
-            detail: {
-                noteWasSaved: "saved"
+        const newNote = {
+            // Key/value pairs here
+                note: document.querySelector("#note-text").value,
+                date:document.querySelector("#note-text").value,
+                suspect:document.querySelector("#note-text").value
             }
 
-        })
-            // Key/value pairs here
 
         // Change API state and application state
-        eventHub.dispatchEvent(newNote)
+        saveNote(newNote)
     }
 })
 

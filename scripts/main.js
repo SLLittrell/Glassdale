@@ -1,12 +1,11 @@
 console.log("Welcome to the main module")
-// import {getOfficers, useOfficers} from './officers/OfficerProvider.js'
-// import {getCriminals} from './criminals/CriminalDataProvider.js'
-// import {OfficerList} from "./officers/OfficerList.js";
+
 import { CriminalList } from "./criminals/CriminalList.js";
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 import {OfficerSelect} from './officers/OfficerSelect.js'
 import {NoteForm} from './notes/NoteForm.js'
-
+import {ShowNoteButton} from './notes/ShowNotesButton.js'
+import "./notes/NoteList.js"
 // console.log(getOfficers())
 
 
@@ -23,3 +22,6 @@ OfficerSelect()
 
 //Note form html
 NoteForm()
+
+//Show notes button
+ShowNoteButton()
