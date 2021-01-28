@@ -18,6 +18,24 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 2px;
 }
 
+.note-criminal_container {
+	display: flex;
+	flex-direction: row;
+}
+.note {
+	padding: 5px;
+}
+
+.noteListContainer {
+	display: flex;
+	border: solid black;
+	flex-direction: column;
+	line-height: 1;
+	flex-basis: 75%;
+	flex-grow: inherit;
+}
+
+
 .filters {
 	display: flex;
 }
@@ -29,18 +47,22 @@ h1,h2,h3,h4,h5,h6 {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-right: 10px;
+	border: solid;
 	flex-basis: 20%;
 }
 
 .criminalContainer {
 	padding: 3px;
+	font-size: smaller;
 	display: flex;
 	flex-direction: column;
 	text-align: left;
 	border: solid black;
 	font-weight: bolder;
-	margin: 10px;
-	width: 20%;
+	margin: 5px;
+	flex-basis: 20%;
 }
 .criminalName {
 	font-size:large;
