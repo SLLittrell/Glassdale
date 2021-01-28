@@ -40,6 +40,4 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-// const NoteForm = () => {
-//     // rest of the code here
-// }
+

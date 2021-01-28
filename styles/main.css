@@ -25,10 +25,12 @@ fieldset {
 
 .date, .suspect {
 	width: 25%;
+	margin-bottom: 5px;
 }
 
 .savebtn {
 	width: 25%;
+	margin-top: 5px;
 }
 
 .filters {
