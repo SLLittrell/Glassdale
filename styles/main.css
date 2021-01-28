@@ -18,6 +18,19 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 2px;
 }
 
+fieldset {
+	display:flex;
+	flex-direction: column;
+}
+
+.date, .suspect {
+	width: 25%;
+}
+
+.savebtn {
+	width: 25%;
+}
+
 .filters {
 	display: flex;
 }
