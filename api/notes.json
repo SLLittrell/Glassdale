@@ -1,18 +1,6 @@
 {
   "notes": [
     {
-      "note": "note note note",
-      "date": "note note note",
-      "suspect": "note note note",
-      "id": 1
-    },
-    {
-      "note": "note note note",
-      "date": "note note note",
-      "suspect": "note note note",
-      "id": 2
-    },
-    {
       "note": "This better fucking work",
       "date": "2021-01-27",
       "suspect": "Stacey",
@@ -23,6 +11,12 @@
       "date": "2021-01-28",
       "suspect": "Glenn",
       "id": 4
+    },
+    {
+      "note": "Here is a note!",
+      "date": "2021-01-19",
+      "suspect": "Me",
+      "id": 5
     }
   ]
 }
