@@ -54,6 +54,22 @@ h1,h2,h3,h4,h5,h6 {
 	flex-basis: 20%;
 }
 
+fieldset {
+	display:flex;
+	flex-direction: column;
+}
+
+.date, .suspect {
+	width: 25%;
+	margin-bottom: 5px;
+}
+
+.savebtn {
+	width: 25%;
+	margin-top: 5px;
+}
+
+
 .criminalContainer {
 	padding: 3px;
 	font-size: smaller;

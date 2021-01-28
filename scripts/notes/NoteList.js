@@ -9,7 +9,7 @@ const eventHub = document.querySelector(".container")
 
 //listens for change in note form
 eventHub.addEventListener("noteStateChanged", event => {
-    if(document.querySelector(".noteFormContainer"))NoteList()
+    if(contentTarget.innerHTML === "")NoteList()
     
 })
 
@@ -23,7 +23,7 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
         const allNotesConvertedToStrings = noteArray.map(
         note => NoteHTMLConverter(note) ).join("")
 
-    return contentTarget.innerHTML = allNotesConvertedToStrings
+     contentTarget.innerHTML = `<h2>Case Notes</h2><section class="noteEntry">${allNotesConvertedToStrings}</section>`
 }
 // debugger
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
