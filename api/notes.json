@@ -1,5 +1,28 @@
 {
-    "notes": []
-   
+  "notes": [
+    {
+      "note": "note note note",
+      "date": "note note note",
+      "suspect": "note note note",
+      "id": 1
+    },
+    {
+      "note": "note note note",
+      "date": "note note note",
+      "suspect": "note note note",
+      "id": 2
+    },
+    {
+      "note": "This better fucking work",
+      "date": "2021-01-27",
+      "suspect": "Stacey",
+      "id": 3
+    },
+    {
+      "note": "Crime happened today, someone stole all the coffee!",
+      "date": "2021-01-28",
+      "suspect": "Glenn",
+      "id": 4
+    }
+  ]
 }
-

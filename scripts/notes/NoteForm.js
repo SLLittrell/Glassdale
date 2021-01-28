@@ -8,9 +8,9 @@ const render = () => {
         Notes
         <form>
             <fieldset>
-                <input type="text" id="note-text">
+                <textarea id="note-text">Note</textarea>
                 <input type="date" id="note-date">
-                <input type="text" id="note-suspect">
+                <input type="text" id="note-suspect" value="Suspect">
             </fieldset>
             <button id="saveNote">Save Note</button>
         </form>
@@ -30,8 +30,8 @@ eventHub.addEventListener("click", clickEvent => {
         const newNote = {
             // Key/value pairs here
                 note: document.querySelector("#note-text").value,
-                date:document.querySelector("#note-text").value,
-                suspect:document.querySelector("#note-text").value
+                date:document.querySelector("#note-date").value,
+                suspect:document.querySelector("#note-suspect").value
             }
 
 
