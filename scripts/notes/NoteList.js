@@ -7,11 +7,13 @@ const contentTarget = document.querySelector(".noteList")
 const eventHub = document.querySelector(".container")
 // debugger
 
+//listens for change in note form
 eventHub.addEventListener("noteStateChanged", event => {
     if(document.querySelector(".noteFormContainer"))NoteList()
     
 })
 
+//listens for Show Note clicked
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
     

@@ -8,11 +8,11 @@ const render = () => {
         Notes
         <form>
             <fieldset>
-                <textarea id="note-text">Note</textarea>
-                <input type="date" id="note-date">
-                <input type="text" id="note-suspect" value="Suspect">
+                <input class="date" type="date" id="note-date">
+                <input class="suspect" type="text" id="note-suspect" value="Suspect">
+                <textarea class="note" id="note-text">Note</textarea>
+                <button class="savebtn" id="saveNote">Save Note</button>
             </fieldset>
-            <button id="saveNote">Save Note</button>
         </form>
     `
 }
@@ -40,6 +40,4 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-// const NoteForm = () => {
-//     // rest of the code here
-// }
+
