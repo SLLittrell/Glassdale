@@ -1,25 +1,27 @@
 
 import { getCriminals, useCriminals } from "../CriminalDataProvider.js";
-import { Alibi } from "./Alibis.js";
 
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".dialog")
+const contentTarget = document.querySelector(".associatesContainer")
 
 export const ShownAssociates = (criminalObj) => {
-    const htmlHead = `<h3>${criminalObj.name}'s Associates and Alibi's</h3>`
-    const alibiChosen = criminalObj.known_associates.map( associates => {
-        const htmlRep =  `
-        <section class="associate_container">
-        <div>Name: ${associates.name}</div>
-        <div>Alibi: ${associates.alibi}</div>
-        </section>`
-        return htmlRep
-    })
+    const htmlRep = `<div id="alibi__modal" class="modal--parent">
+    <div class="modal--content"><h3>${criminalObj.name}'s Associates</h3>
+    ${ criminalObj.known_associates.map( associates => {
+        return `
+            <section class="associateContainer">
+                <div class="associate__name ">Name: ${associates.name}</div>
+                <div class="associate__alibi">Alibi: ${associates.alibi}</div>
+            </section>`
+        }).join ("")}
+        
+        <button id="modal--close">Close</button>
+            </div>
+        </div>
+        `  
+        contentTarget.innerHTML = htmlRep
+    }
     
-    contentTarget.innerHTML = htmlHead + alibiChosen
-
-}
-
 //listens for click on associate Alibi button
 eventHub.addEventListener("chosenAlibi", customEvent => {
     //match clickevent listener id to criminal id
@@ -31,18 +33,16 @@ eventHub.addEventListener("chosenAlibi", customEvent => {
         return alibiObj.id === parseInt(customEvent.detail.alibiThatWasChosen)
     })
     ShownAssociates(criminalAlibi)
-    // console.log(criminalAlibi)
-    // const alibiChosen = criminalAlibi.known_associates.map( associates => {
-    //     const associateName =  `
-    //     <h3>${criminalAlibi.name}'s Associates and Alibi's</h3>
-    //     <section class="associate_container">
-    //     <div>Name: ${associates.name}</div>
-    //     <div>Alibi: ${associates.alibi}</div>
-    //     </section>`
-    //     return associateName
-    // })
-    
-    // contentTarget.innerHTML = alibiChosen
 
 
 })
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "modal--close") {
+        closeModal()
+    }
+})
+
+const closeModal = () => {
+    contentTarget.innerHTML = ""
+}
