@@ -18,9 +18,32 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
+header {
+	background-color: cornflowerblue;
+	padding: 5px;
+}
+.filters {
+	background-color: rgb(4, 40, 87);
+	padding: 7px;
+}
 
+.witnessList {
+	display: flex;
+	border: solid black;
+	flex-direction: column;
+	background-color: rgb(162, 203, 236);
+}
 
+.witnessList h3 {
+	text-align: center;
+}
 
+.witness {
+	margin: 5px;
+	padding: 5px;
+	border: solid black;
+	background-color: white;
+}
 
 .note-criminal_container {
 	display: flex;
@@ -40,8 +63,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .noteListContainer {
 	display: flex;
-	border: solid black;
 	flex-direction: column;
+	align-items: center;
 	line-height: 1;
 	flex-basis: 75%;
 	background-color:  rgb(162, 203, 236);
@@ -64,15 +87,20 @@ h1,h2,h3,h4,h5,h6 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	border: solid;
 	flex-basis: 20%;
-	background-color: rgb(210, 224, 235);
+	background-color:  rgb(162, 203, 236);
+}
+
+.criminalsContainer {
+	background-color:  rgb(162, 203, 236);
 }
 
 fieldset {
 	display:flex;
 	flex-direction: column;
 	height: 275px;
+	justify-content: center;
+	border: solid;
 }
 
 .date, .suspect {
@@ -101,7 +129,7 @@ fieldset {
 	font-weight: bolder;
 	margin: 5px;
 	width: 20%;
-	background-color: rgb(162, 203, 236);
+	background-color:white;
 }
 .criminalName {
 	font-size:large;

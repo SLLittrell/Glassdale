@@ -26,7 +26,7 @@ const renderWitness = (witnessObject) => {
         witnesshtmlRep += Witness(witness)
     }
 
-    contentTarget.innerHTML = ` <section class="witnessList">${witnesshtmlRep} </section>`
+    contentTarget.innerHTML = ` <section class="witnessList"><h3>Witness Statements</h3>${witnesshtmlRep} </section>`
 }
 eventHub.addEventListener("showWitnessClicked", customEvent => {
    WitnessList()
