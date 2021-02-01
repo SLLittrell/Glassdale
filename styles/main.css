@@ -66,7 +66,7 @@ header {
 	flex-direction: column;
 	align-items: center;
 	line-height: 1;
-	flex-basis: 75%;
+	flex-basis: 25%;
 	background-color:  rgb(162, 203, 236);
 }
 .noteContainer {
@@ -86,12 +86,14 @@ header {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	flex-basis: 100%;
 	justify-content: space-evenly;
-	flex-basis: 20%;
 	background-color:  rgb(162, 203, 236);
 }
 
 .criminalsContainer {
+	display: flex;
+	flex-basis: 75%;
 	background-color:  rgb(162, 203, 236);
 }
 
@@ -128,7 +130,7 @@ fieldset {
 	border: solid black;
 	font-weight: bolder;
 	margin: 5px;
-	width: 20%;
+	width: 25%;
 	background-color:white;
 }
 .criminalName {
