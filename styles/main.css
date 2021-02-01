@@ -4,11 +4,8 @@
 --------------------------------------------------------------*/
 
 body,
-button,
-input,
-select,
-textarea {}
-	color: #404040;
+{
+	color: black;
 	font-family: "Comfortaa", Arial, sans-serif;
 	line-height: 1;
 	font-size: smaller;
