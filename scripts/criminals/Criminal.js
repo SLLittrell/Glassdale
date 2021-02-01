@@ -10,17 +10,16 @@ export const Criminal = (criminalObj) => {
     </div>
     `
 }
-
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", event => {
 
     if (event.target.id.startsWith("associates--")) {
-        // Create custom event. Provide an appropriate name.
+        // Create custom event. Get criminal id.
         const [prefix, chosenAlibi] = event.target.id.split("--")
 
         const customEvent = new CustomEvent("chosenAlibi", {
             detail: {
-                crimeThatWasChosen: chosenAlibi
+                alibiThatWasChosen: chosenAlibi
             }
         })
         // console.log("clicked")
@@ -29,4 +28,3 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(customEvent)
     }
 })
-
