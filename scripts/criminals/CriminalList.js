@@ -2,10 +2,38 @@ import { getCriminals, useCriminals } from './CriminalDataProvider.js'
 import { Criminal } from "./Criminal.js";
 import {useConvictions} from "../convictions/ConvictionProvider.js"
 import { useOfficers } from '../officers/OfficerDataProvider.js';
+import { getWitness, useWitness } from '../witnesses/WitnessDataProvider.js';
+import { Witness } from '../witnesses/Witness.js';
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
+
+//_______________-Rendering Witnesses________________________
+
+export const WitnessList= () => {
+    getWitness()
+    .then(() => {
+        const witnessObj = useWitness()
+        renderWitness(witnessObj)
+    })
+    
+}
+
+const renderWitness = (witnessObject) => {
+    let witnesshtmlRep = ""
+    for (const witness of witnessObject ) {
+        witnesshtmlRep += Witness(witness)
+    }
+
+    contentTarget.innerHTML = ` <section class="witnessList"><h3>Witness Statements</h3>${witnesshtmlRep} </section>`
+}
+eventHub.addEventListener("showWitnessClicked", customEvent => {
+   WitnessList()
+    
+})
+
+//________________________________________________
 //Listens for custum event from OfficeSelect dropdown
 eventHub.addEventListener("officerSelected", event => {
     // How can you access the officer name that was selected by the user?

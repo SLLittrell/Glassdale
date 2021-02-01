@@ -7,6 +7,10 @@ import {NoteForm} from './notes/NoteForm.js'
 import {ShowNoteButton} from './notes/ShowNotesButton.js'
 import  "../scripts/notes/NoteList.js"
 import  "../scripts/criminals/alibis/AssociateAlibis.js"
+import { ShowWitnessButton } from "./witnesses/ShowWitnessButton.js";
+
+// import { getWitness } from "./witnesses/WitnessDataProvider.js";
+
 // console.log(getOfficers())
 
 
@@ -27,3 +31,5 @@ NoteForm()
 //Show notes button
 ShowNoteButton()
 // NoteList()
+
+ShowWitnessButton()
