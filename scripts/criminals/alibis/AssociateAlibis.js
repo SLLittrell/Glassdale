@@ -1,5 +1,5 @@
 
-import { getCriminals, useCriminals } from "../CriminalDataProvider.js";
+import { useCriminals } from "../CriminalDataProvider.js";
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".associatesContainer")
