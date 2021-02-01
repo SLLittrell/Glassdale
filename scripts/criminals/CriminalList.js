@@ -34,7 +34,8 @@ eventHub.addEventListener("officerSelected", event => {
 
     // debugger
 })
-
+//_________________________________________________________________
+//Event Listener sorting Criminals by Crime using crime dropdown
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", event => {
     // Use the property you added to the event detail.
@@ -92,3 +93,4 @@ const renderToDom = criminalCollection => {
     <section class="criminalList">${criminalHTMLRep}</section>
 `
 }
+
