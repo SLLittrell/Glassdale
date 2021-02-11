@@ -18,8 +18,9 @@ const htmlRender = () => {
                 <textarea class="note" id="note-text">Note</textarea>
                 <label for ="noteForm--criminal">Choose Suspect:</label> 
                 <select id="noteForm--criminal" class="criminalSelect">
+                <option value="0">Choose a Suspect</option>
                 ${ criminalArray.map(criminal => 
-                    `<option value="${ criminal.id }">${ criminal.name }</option>` )}
+                    `<option value="${ criminal.id }">${ criminal.name }</option>`).join("")}
                 </select>
                 <button class="savebtn" id="saveNote">Save Note</button>
             </fieldset>

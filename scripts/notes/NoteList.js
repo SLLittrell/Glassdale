@@ -3,16 +3,16 @@ import { NoteHTMLConverter } from "./Note.js"
 import {useCriminals, getCriminals} from '../criminals/CriminalDataProvider.js'
 
 const render = (noteCollection, criminalCollection) => {
-    contentTarget.innerHTML = noteCollection.map(note => {
+     const allNotesConvertedToStrings = noteCollection.map(note => {
         // Find the related criminal
         const relatedCriminal = criminalCollection.find(criminal => criminal.id === parseInt(note.criminalId))
-        return `
-            <section class="note">
-                <h2>Note about ${relatedCriminal.name}</h2>
-                ${note.note}
-            </section>
-        `
-    }).join(" ")
+        return NoteHTMLConverter(note,relatedCriminal)
+        
+    }).join(" ") 
+    
+    contentTarget.innerHTML =`
+    <h2>Case Notes</h2><section class="noteEntry">${allNotesConvertedToStrings}</section>
+    `
 }
 
 export const NoteList = () => {

@@ -47,13 +47,16 @@ header {
 
 .note-criminal_container {
 	display: flex;
-	flex-direction: row;
 	flex-basis: content;
+	justify-content: center;
 }
 
 
 .note {
-	height: 100px;
+	display: flex;
+	flex-direction: column;
+	font-weight: bolder;
+	line-height: 2;
 	padding: 10px;
 	border: solid;
 	margin: 5px;
@@ -71,6 +74,8 @@ header {
 }
 .noteContainer {
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	flex-wrap: wrap;
 	margin: 5px;
 }
