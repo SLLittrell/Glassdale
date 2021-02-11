@@ -35,6 +35,12 @@
       "date": "",
       "suspect": "Suspect",
       "id": 6
+    },
+    {
+      "note": "Two witnesses saw someone wearing a car dealership hat.",
+      "date": "2021-02-02",
+      "suspect": "Suspect",
+      "id": 7
     }
   ]
 }
