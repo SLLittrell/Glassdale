@@ -4,12 +4,15 @@ import {useConvictions} from "../convictions/ConvictionProvider.js"
 import { useOfficers } from '../officers/OfficerDataProvider.js';
 import { getWitness, useWitness } from '../witnesses/WitnessDataProvider.js';
 import { Witness } from '../witnesses/Witness.js';
+import { getFacilities, useFacilities } from '../facility/FacilityProvider.js';
+import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js';
+
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 
-//_______________-Rendering Witnesses________________________
+//_____________________Rendering Witnesses
 
 export const WitnessList= () => {
     getWitness()
@@ -33,8 +36,7 @@ eventHub.addEventListener("showWitnessClicked", customEvent => {
     
 })
 
-//________________________________________________
-//Listens for custum event from OfficeSelect dropdown
+//_____________________Listens for custum event from OfficeSelect dropdown
 eventHub.addEventListener("officerSelected", event => {
     // How can you access the officer name that was selected by the user?
     const officerName = event.detail.officer
@@ -62,8 +64,7 @@ eventHub.addEventListener("officerSelected", event => {
 
     // debugger
 })
-//_________________________________________________________________
-//Event Listener sorting Criminals by Crime using crime dropdown
+//_________________Event Listener sorting Criminals by Crime using crime dropdown
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", event => {
     // Use the property you added to the event detail.
@@ -78,14 +79,11 @@ eventHub.addEventListener("crimeChosen", event => {
            const convictionThatWasChosen = convictionsArray.find(convictionObj => {
                return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
             })
-
             // console.log("checked", convictionThatWasChosen.name)
-            
             
              /*
             Filter the criminals application state down to the people that committed the crime
             */
-            
             const appStateCriminals = useCriminals()
 
 
@@ -94,31 +92,46 @@ eventHub.addEventListener("crimeChosen", event => {
   
         )
 
-        /*
-        Then invoke render() and pass the filtered collection as
-        an argument
-        */
         renderToDom(matchingCriminals)
     }
 })
 
-// Render ALL criminals initally
+//_________________Render ALL criminals initally
 export const CriminalList = () => {
-    getCriminals()
+    getFacilities()
+        .then(getCriminalFacilities)
+        .then(getCriminals)
         .then(() => {
-            const appStateCriminals = useCriminals()
-            renderToDom(appStateCriminals)
+            // Pull in the data now that it has been fetched
+            const facilities = useFacilities()
+            const crimFac = useCriminalFacilities()
+            const criminals = useCriminals()
+
+            renderToDom(criminals, facilities, crimFac)
         })
 }
 
-const renderToDom = criminalCollection => {
-        let criminalHTMLRep = ""
-        // 
-        criminalCollection.forEach(criminal => {
-            criminalHTMLRep += Criminal(criminal)
-        }); 
+const renderToDom = (criminalsToRender, allFacilities, allRelationships) => {
+    // Step 1 - Iterate all criminals
+    const criminalFilter = criminalsToRender.map(
+        (criminalObject) => {
+            // Step 2 - Filter all relationships to get only ones for this criminal
+            const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+
+            // Step 3 - Convert the relationships to facilities with map()
+            const facilities = facilityRelationshipsForThisCriminal.map(cf => {
+                const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+                return matchingFacilityObject
+            })
+
+            // Must pass the matching facilities to the Criminal component
+            return Criminal(criminalObject, facilities)
+        }
+    ).join("")
+
+
     contentTarget.innerHTML = `
-    <section class="criminalList">${criminalHTMLRep}</section>
+    <section class="criminalList">${criminalFilter}</section>
 `
 }
 
