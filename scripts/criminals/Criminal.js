@@ -6,10 +6,10 @@ export const Criminal = (criminalObj, facilityObj) => {
         <p class="criminalCrime">Crime: ${criminalObj.conviction}</p>
         <p class="criminalTermStart">Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
         <p class="criminalTermEnd">Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
-        <p class="criminalFacility">Facility: ${facilityObj.facilityName}</p>
+        <p class="criminalFacility">Facility: ${facilityObj.map(f => `<li>${f.facilityName}</li>`).join("")}</p>
         <button id="associates--${criminalObj.id}">Associate Alibis</button>
-    </div>
-    `
+        </div>
+        `
 }
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", event => {

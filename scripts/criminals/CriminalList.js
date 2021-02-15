@@ -59,8 +59,9 @@ eventHub.addEventListener("officerSelected", event => {
         criminalObject => criminalObject.arrestingOfficer === officerThatWasChosen.name
 
         )
-        
-        renderToDom(criminalArray)
+        const facilities = useFacilities()
+        const crimFac = useCriminalFacilities()
+        renderToDom(criminalArray, facilities, crimFac)
 
     // debugger
 })
@@ -91,8 +92,9 @@ eventHub.addEventListener("crimeChosen", event => {
             criminalObj.conviction === convictionThatWasChosen.name
   
         )
-
-        renderToDom(matchingCriminals)
+        const facilities = useFacilities()
+        const crimFac = useCriminalFacilities()         
+        renderToDom(matchingCriminals,facilities, crimFac)
     }
 })
 
@@ -109,8 +111,8 @@ export const CriminalList = () => {
 
             renderToDom(criminals, facilities, crimFac)
         })
+        
 }
-
 const renderToDom = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
     const criminalFilter = criminalsToRender.map(
