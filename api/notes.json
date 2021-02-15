@@ -1,3 +1,11 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "note": "It's slick out there!",
+      "date": "2021-02-15",
+      "auther": "Officer Stacey",
+      "criminalId": "7",
+      "id": 1
+    }
+  ]
 }
