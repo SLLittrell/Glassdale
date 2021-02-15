@@ -1,0 +1,28 @@
+.facilityList {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-basis: 100%;
+	justify-content: space-evenly;
+	background-color:  rgb(162, 203, 236);
+}
+
+.facility {
+    
+    padding: 3px;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: solid black;
+    font-weight: bolder;
+    margin: 5px;
+    width: 25%;
+    background-color:white;
+    line-height: 2;
+
+}
+.facility h2 {
+    text-align: center;
+    font-size: large;
+}

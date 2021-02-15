@@ -12,6 +12,7 @@ const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 
+
 //_____________________Rendering Witnesses
 
 export const WitnessList= () => {
@@ -98,7 +99,7 @@ eventHub.addEventListener("crimeChosen", event => {
     }
 })
 
-//_________________Render ALL criminals initally
+//_________________Render ALL criminals initally with facilities
 export const CriminalList = () => {
     getFacilities()
         .then(getCriminalFacilities)

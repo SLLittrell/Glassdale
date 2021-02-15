@@ -8,14 +8,15 @@ import {ShowNoteButton} from './notes/ShowNotesButton.js'
 import  "../scripts/notes/NoteList.js"
 import  "../scripts/criminals/alibis/AssociateAlibis.js"
 import { ShowWitnessButton } from "./witnesses/ShowWitnessButton.js";
+import { ShowFacilityButton } from "./facility/DisplayFacilitiesButton.js";
+import "./facility/FacilityList.js";
 
 // import { getWitness } from "./witnesses/WitnessDataProvider.js";
 
 // console.log(getOfficers())
 
 
-//List of officers
-// OfficerList()
+
 
 //List of criminals
 CriminalList()
@@ -33,3 +34,5 @@ ShowNoteButton()
 // NoteList()
 
 ShowWitnessButton()
+
+ShowFacilityButton()
